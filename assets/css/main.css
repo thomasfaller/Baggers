@@ -16,6 +16,10 @@
 }
 /*HIDING THE NAV BULLETS*/
 
+/*cards buttons*/
+
+#left-btn {margin-right: 55%}
+#right-btn {margin-left: 55%}
 
 html,
 button,
@@ -1714,6 +1718,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6da32', end
 .shareLinks a{font-size: 1.1em; color: #000; font-weight: 800;border: 2px solid #000;margin-left: 3px; box-sizing: border-box;padding: 5px 10px;}
 
 .scroll-thumb{position: fixed; bottom: 0; background-color: #000; left: 0; right:0; margin: auto; width: 115px;text-align: center; height: 35px; border-radius: 100px 100px 0 0; padding-top: 25px;font-weight: 100;font-size: 16px;z-index: 99999;transition: opacity 0.2s;z-index: 999;}
+
 
 .slide-inner{height: auto;overflow: auto;background-color: red;}
 

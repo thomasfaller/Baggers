@@ -60,11 +60,19 @@
                 <p>The face of masculinity is changing - literally. As 1 in 10 British men tell us they would consider “selfie surgery” to boost their social following, we take a look at the extreme grooming habits of the modern British gentleman and the weirdest surgical trends sweeping the nation. Be warned: some of these are not for the faint-hearted.</p>
             </div>
             </div>
-                <a href="#" onClick class="scrollC1">
+                <a href="JavaScript:Void(0);" onClick class="scrollC1">
                   <div class="scroll-thumb text-white animated fadeInUp">SCROLL</div>
                 </a>
             </div>
         </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -250,6 +258,12 @@
                         <div class="circle-mask abs-centered" data-800="width:100%;height:100%;" data-2000="width:0%;height:0;">
                             <span class="illustration" data-800="top: 150px;" data-2000="top: 40px;"></span>
                         </div>
+                        <a href="JavaScript:Void(0)" onClick class="scrollToPrev">
+                          <div id="left-btn" class="scroll-thumb text-white animated fadeInUp">UP</div>
+                        </a>
+                          <a href="JavaScript:Void(0)" onClick class="scrollToNext">
+                          <div id="right-btn" class="scroll-thumb text-white animated fadeInUp">DOWN</div>
+                        </a>
                     </li>
 
                     <!-- PROCEDURE 1 - SLIDE 2 -->
@@ -272,12 +286,6 @@
                             <span class="illustration" data-3000="left:-600px" data-4000="left:-200px;"></span>
                         </div>
                     </li>
-
-
-
-
-
-
 
                     <!-- PROCEDURE 2 - SLIDE 1 -->
                     <li id="c5" class="car c5">
@@ -689,6 +697,18 @@
         $("html, body").animate({ scrollTop: 1200 }, "slow");
     });
 
+    $('.scrollToNext').click(function(){
+        var body = $("html,body");
+        var height = $(window).scrollTop();
+        $("html, body").animate({ scrollTop: height + 1000 }, "slow");
+    });
+
+    $('.scrollToPrev').click(function(){
+        var body = $("html,body");
+        var height = $(window).scrollTop();
+        $("html, body").animate({ scrollTop: height - 1000 }, "slow");
+    });
+
     $('.scrollC2').click(function(){
         var body = $("html, body");
         var height = $(window).scrollTop();
@@ -702,7 +722,7 @@
         }
     });
 
-    $('.scrollC4').click(function(){
+    $('.scrollC4').click(function(){      // Back to the Top Scroll
         var body = $("html, body");
         body.stop().animate({scrollTop:0}, 500, 'swing', function() {
         });
@@ -711,15 +731,6 @@
 
 <!-- test from https://stackoverflow.com/questions/28133107/skrollr-ipad-skrollr-body-->
 
-<script type="text/javascript">
-
-if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
-skrollr.init({
-forceHeight: false
-});
-}
-
-</script>
 
 <!-- /test -->
 

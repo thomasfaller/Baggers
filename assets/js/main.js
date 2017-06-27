@@ -1,7 +1,7 @@
 
 var Nav, DragReveal, app;
 
-$(function(){  
+$(function(){
     var hash = window.location.hash;
     if(hash){
         hash = hash.substring(2);
@@ -16,12 +16,12 @@ $(function(){
 
         $('html').removeClass('js').addClass('no-js no-js-mode');
 
-        $('#share-panel').on('click', function(e){ 
+        $('#share-panel').on('click', function(e){
             e.preventDefault();
-            $(this).closest('.share-panel').toggleClass('open'); 
+            $(this).closest('.share-panel').toggleClass('open');
         });
 
-        $('.car').each(function(){ 
+        $('.car').each(function(){
             $(this).on('click', function(){
                 var y = $(this).offset().top;
                 $('html, body').stop().animate({ 'scrollTop': y}, 600, 'swing');
@@ -38,8 +38,8 @@ $(function(){
         this.draggerOrigin = obj.dragger.attr('data-x');
 
         this.init = function(){
-            obj.dragger.draggable({ 
-                axis: "x", 
+            obj.dragger.draggable({
+                axis: "x",
                 containment: "parent",
                 drag: obj.onDrag,
                 stop: obj.onDrop
@@ -62,7 +62,7 @@ $(function(){
         var obj = this;
         obj.el = $(el);
 
-        this.prevCurr = 1;   
+        this.prevCurr = 1;
         this.active = [];
 
         this.init = function(){
@@ -81,7 +81,7 @@ $(function(){
         };
 
         this.onNavClick = function(e, n, speed){
-            var n = n || $(e.target).closest('li').index()+1; 
+            var n = n || $(e.target).closest('li').index()+1;
             if (e)  e.preventDefault();
 
             if (Math.abs(obj.prevCurr - n)==1) obj.switchSlide(n);
@@ -92,7 +92,7 @@ $(function(){
             var yPos = $(window).scrollTop();
            var n = Math.floor(yPos / app.PAGEHEIGHT);
 
-             if (n == app.currPage) 
+             if (n == app.currPage)
                {
                     return;
 
@@ -104,11 +104,11 @@ $(function(){
                 app.currPage = n;
             }
            }
-         
+
 
             obj.switchSlide(n);
         };
-        
+
         this.switchSlide = function(n){
             obj.prevCurr = app.currPage;
             app.currPage = n;
@@ -123,26 +123,26 @@ $(function(){
                 var stateObj = {};
                 if(history.pushState){ history.pushState(stateObj, forUrl, '#'+forUrl); }
             }
-           
-            
-            
+
+
+
         };
-        
+
         this.goPrevious = function(){
             if (app.currPage == 1) return;
             app.currPage--;
             obj.onNavClick(null, app.currPage);
         };
-        this.goNext = function(){     
+        this.goNext = function(){
             if (app.currPage == app.numOfCars) return;
             app.currPage++;
             obj.onNavClick(null, app.currPage);
         };
-        
+
         this.setActiveCar = function(n){
             if (Math.abs(obj.prevCurr - n)>2) return;
 
-            app.aCars.eq(n).addClass('adjacent').removeClass('active');  
+            app.aCars.eq(n).addClass('adjacent').removeClass('active');
             if (n-2 >= 0) app.aCars.eq(n-2).addClass('adjacent').removeClass('active');
             if (n-1 >= 0) app.aCars.eq(n-1).addClass('active').removeClass('adjacent');
             // hide old adjacents, lower down the car stack - don't need to worry about ones above cos they are 0px x 0px
@@ -158,7 +158,7 @@ $(function(){
                 speed = (distance/4) * 2000,
                 carEase = (distance < 4) ? 'linear' : 'swing';
 
-            speed = (speed < 400) ? 400 : speed;    // min speed 
+            speed = (speed < 400) ? 400 : speed;    // min speed
             if (sp) speed = sp;
             $('html, body').stop().animate({ 'scrollTop': yPos}, speed, carEase);
         };
@@ -166,9 +166,9 @@ $(function(){
     }
 
     app = {
-        PAGEHEIGHT:     1000,   // never change this, not unless you want to re-write ALL of your data-animations in your HTML 
+        PAGEHEIGHT:     1000,   // never change this, not unless you want to re-write ALL of your data-animations in your HTML
         NOJSMODE:       false,
-            
+
         numOfCars:      0,
         currPage:       0,
         prevScroll:     -100,
@@ -216,9 +216,9 @@ $(function(){
                 $('.promote-panel').each(function(){ new PromoteLinks(this); });
                 $('.photo-mask-wrap').each(function(){ new DragReveal(this); });
 
-                // $('#front-page').find('a, .front-car').on('click', function(){ 
+                // $('#front-page').find('a, .front-car').on('click', function(){
                 //     app.carsNav.onNavClick(null, 1, 1600);
-                //     return false; 
+                //     return false;
                 // });
 
                 $('#share-panel')
@@ -234,7 +234,7 @@ $(function(){
                     app.onResize();     // do it now!
             }
         },
-        onScroll: function(){         
+        onScroll: function(){
             var yPos = $(window).scrollTop();
            // if (app.prevScroll < 0) {
             //    setTimeout(function(){ $(window).scrollTop(1); }, 600);
@@ -265,7 +265,7 @@ $(function(){
                 'left': leftOffset,
                 'top': topOffset
             });
-            
+
             // resize the nav
             app.carsNav.onResize(wh);
             // app.carsNav1.onResize(wh);
@@ -286,7 +286,7 @@ $(function(){
             {
                 return ((n-1) * app.PAGEHEIGHT) + app.PAGEHEIGHT;
             }
-            
+
         },
         getCurrentFromScrollPos: function(){
             return Math.floor($(window).scrollTop() / 1000);
@@ -304,6 +304,6 @@ $(function(){
             var wh = $(window).height();
             return (ww > wh);
         }
-    };  
+    };
     app.init();
 });
