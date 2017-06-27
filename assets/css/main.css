@@ -10,6 +10,13 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+/*HIDING THE NAV BULLETS*/
+#cars-nav ul li {
+  display: none;
+}
+/*HIDING THE NAV BULLETS*/
+
+
 html,
 button,
 input,
@@ -135,13 +142,13 @@ input {
 
 /*---------------------------------
  *
- *   Embed / Wallpaper - Promote panels 
+ *   Embed / Wallpaper - Promote panels
  *
  *-------------------------------*/
 .promote-panel {
     width: 100%;
     top: -300px;
-    position: fixed;    
+    position: fixed;
     z-index: 3;
     -webkit-transition: top 0.4s ease-out;
     -moz-transition: top 0.4s ease-out;
@@ -326,7 +333,7 @@ input {
     top: 50%;
     width: 300px;
     height: 108px;
-    margin-top: -60px; 
+    margin-top: -60px;
     padding-right: 105px;
     background: #fff;
     color: #424251;
@@ -390,11 +397,11 @@ input {
     padding-top: 1px;
 }
 .tw {
-    
+
 }
 .pn {
     padding-top: 30px;
-    
+
 }
 .su {
     padding-top: 3px;
@@ -435,9 +442,9 @@ input {
     background-repeat: no-repeat;
     border-radius: 50%;
 }
-.date, 
-.illustration, 
-.part1, 
+.date,
+.illustration,
+.part1,
 .part2 {
     width: 100%;
     height: 100%;
@@ -452,8 +459,8 @@ input {
     border-radius: 50%;
     /*-moz-transition: 0.4s 0s;*/
 }
-.name, 
-.description, 
+.name,
+.description,
 .film-title {
     position: fixed;
     display: block;
@@ -461,7 +468,7 @@ input {
     color: #fff;
     font-size: 2em;
 }
-.name, 
+.name,
 .film-title {
     width: 85%;
 }
@@ -490,7 +497,7 @@ input {
 
 /*---------------------------------
  *
- *   Indiviual Cars 
+ *   Indiviual Cars
  *
  *-------------------------------*/
 
@@ -524,7 +531,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#df0c80', end
 /*.c2 .date           { background-image: url(../bond-img/cars/c2-date.png); }*/
 
 .c3                 { z-index: 23;}
-.c3 .circle-mask    { 
+.c3 .circle-mask    {
 background: #df0c80;
 background: -moz-radial-gradient(center, ellipse cover, #df0c80 0%, #b92c91 50%, #b92c91 100%);
 background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #df0c80), color-stop(50%, #b92c91), color-stop(100%, #b92c91));
@@ -586,7 +593,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#df0c80', end
 
 
 .c7                 { z-index: 19;}
-.c7 .circle-mask    { 
+.c7 .circle-mask    {
 background: #df0c80;
 background: -moz-radial-gradient(center, ellipse cover, #df0c80 0%, #b92c91 50%, #b92c91 100%);
 background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #df0c80), color-stop(50%, #b92c91), color-stop(100%, #b92c91));
@@ -648,8 +655,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#df0c80', end
 
 
 .c11                 { z-index: 15;}
-.c11 .name, 
-.c11 .circle-mask    { 
+.c11 .name,
+.c11 .circle-mask    {
 background: #df0c80;
 background: -moz-radial-gradient(center, ellipse cover, #df0c80 0%, #b92c91 50%, #b92c91 100%);
 background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #df0c80), color-stop(50%, #b92c91), color-stop(100%, #b92c91));
@@ -1015,7 +1022,7 @@ span.d {
     margin-right: 6px;
 }
 .lt-ie9 .cars-nav .car-thumb {
-    left: -116px;   
+    left: -116px;
 }
 .lt-ie9 .cars-nav li:hover a {
     margin-top: 4px;
@@ -1031,7 +1038,7 @@ span.d {
 }
 .lt-ie8 .c1 .circle-mask * {
     background-position: center 65%;
-} 
+}
 .lt-ie8 .front-car {
     background: url(../bond-img/ie-front-car.png) no-repeat center center;
     width: 100%;
@@ -1289,12 +1296,12 @@ span.d {
         background: #fafafa;
         -webkit-border-radius: 5px;
     }
-    
+
     /* fix height of car */
     .no-js .car {
         padding-bottom: 560px;
     }
-}   
+}
 @media only screen and (max-width: 1000px) {
     .photo-mask-wrap {
         display: none;
@@ -1315,7 +1322,7 @@ span.d {
     }
     .no-js .date, .no-js .illustration, .no-js .part1, .no-js .part2 {
         background-size: 100%;
-    } 
+    }
     .brand-name {
         position: fixed;
         left: 4%;
@@ -1363,6 +1370,9 @@ span.d {
     }
     .cars-nav {
         display: none;
+
+
+
     }
 }
 
@@ -1459,8 +1469,8 @@ span.d {
     -moz-transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
     -o-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);  
-    background-color: transparent; 
+    transform: translate(-50%,-50%);
+    background-color: transparent;
     z-index: 999;
     transition: all 0.3s;
 }
@@ -1737,8 +1747,3 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6da32', end
     top: 0;
     border-radius: 0!important;
 }
-
-
-
-
-
