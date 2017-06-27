@@ -33,7 +33,7 @@
 
     <body>
     <div class="loader"></div>
-    <div id="skrollr-body"></div>
+    <div id="skrollr-body">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
@@ -679,44 +679,50 @@
 
 
 
-    <script>
-        $(document).scroll(function() {
-          var y = $(this).scrollTop();
-          if (y > 1000) {
-            $('.cars-nav').fadeIn('slow');
-          } else {
-            $('.cars-nav').hide();
-          }
-        });
 
-        $('.scrollC1').click(function(){
-            var body = $("html,body");
-            $("html, body").animate({ scrollTop: 1200 }, "slow");
-        });
 
-        $('.scrollC2').click(function(){
-            var body = $("html, body");
-            var height = $(window).scrollTop();
-            if(height>=3999){
-                body.stop().animate({scrollTop:0}, 500, 'swing', function() {
-            });
-            }
-            else{
-                body.stop().animate({scrollTop:height+1000}, 500, 'swing', function() {
-                    });
-            }
-        });
+</div>
 
-        $('.scrollC4').click(function(){
-            var body = $("html, body");
+
+
+<script>
+    $(document).scroll(function() {
+      var y = $(this).scrollTop();
+      if (y > 1000) {
+        $('.cars-nav').fadeIn('slow');
+      } else {
+        $('.cars-nav').hide();
+      }
+    });
+
+    $('.scrollC1').click(function(){
+        var body = $("html,body");
+        $("html, body").animate({ scrollTop: 1200 }, "slow");
+    });
+
+    $('.scrollC2').click(function(){
+        var body = $("html, body");
+        var height = $(window).scrollTop();
+        if(height>=3999){
             body.stop().animate({scrollTop:0}, 500, 'swing', function() {
-            });
         });
-    </script>
+        }
+        else{
+            body.stop().animate({scrollTop:height+1000}, 500, 'swing', function() {
+                });
+        }
+    });
+
+    $('.scrollC4').click(function(){
+        var body = $("html, body");
+        body.stop().animate({scrollTop:0}, 500, 'swing', function() {
+        });
+    });
+</script>
 
 <!-- test from https://stackoverflow.com/questions/28133107/skrollr-ipad-skrollr-body-->
 
-    <script type="text/javascript">
+<script type="text/javascript">
 
 if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
 skrollr.init({
@@ -728,9 +734,7 @@ forceHeight: false
 
 <!-- /test -->
 
-        <!-- FONTS -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900" rel="stylesheet">
-
-
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900" rel="stylesheet">
     </body>
 </html>
